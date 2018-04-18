@@ -75,6 +75,26 @@ public class Main {
     }
   }
 
+  @RequestMapping("/teams")
+  String team(Map<String, Object> model) {
+    try (Connection connection = dataSource.getConnection()) {
+      Statement stmt = connection.createStatement();
+
+      ResultSet rs = stmt.executeQuery("SELECT tick FROM team");
+
+      ArrayList<String> output = new ArrayList<String>();
+      while (rs.next()) {
+        output.add("team :  " + rs.getTimestamp("team_name"));
+      }
+
+      model.put("records", output);
+      return "db";
+    } catch (Exception e) {
+      model.put("message", e.getMessage());
+      return "error";
+    }
+  }
+
   @Bean
   public DataSource dataSource() throws SQLException {
     if (dbUrl == null || dbUrl.isEmpty()) {
