@@ -83,7 +83,7 @@ public class Main {
 
       ArrayList<String> output = new ArrayList<String>();
       while (rs.next()) {
-        output.add("team :  " + rs.getTimestamp("tick"));
+        output.add("team :  " + rs.getTimestamp("team_name"));
       }
 
       model.put("records", output);
