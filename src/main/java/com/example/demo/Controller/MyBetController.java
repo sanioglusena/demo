@@ -49,7 +49,7 @@ public class MyBetController {
             MyBet myBet = new MyBet();
             myBet.setUserId(bet.getUser_id());
             myBet.setTimeStampofBet(bet.getTimestamp());
-            List<BetEvent> betEvents = betEventRepository.findByBetEventIdentityBetId(bet.getBet_id());
+            List<BetEvent> betEvents = betEventRepository.findByBetEventIdentityBetId(bet.getBetId());
             myBet.setEventCount(betEvents.size());
             myBet.setAmount(bet.getAmount());
             myBet.setParentId(bet.getParent_bet());
@@ -90,5 +90,15 @@ public class MyBetController {
         }
 
         return  events;
+    }
+    @RequestMapping(value = "/update", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @ResponseBody
+    public List<String> setShared(@RequestParam(value = "betId") int betId) {
+        Bet bet = betRepository.findByBetId(betId);
+
+        bet.setIs_shared(1);
+        betRepository.save(bet);
+
+        return  new ArrayList<String>();
     }
 }

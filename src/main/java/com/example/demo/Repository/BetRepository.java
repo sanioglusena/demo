@@ -13,6 +13,7 @@ import java.util.List;
 public interface BetRepository extends CrudRepository <Bet, Integer> {
     List<Bet> findAll();
     List<Bet> findByUserId(int UserId);
+    Bet findByBetId(int betId);
 
 }
 

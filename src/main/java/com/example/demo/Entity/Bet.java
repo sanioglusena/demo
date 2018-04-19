@@ -12,7 +12,8 @@ public class Bet {
 
     @Id
     @GeneratedValue
-    private int bet_id;
+    @Column(name="bet_id")
+    private int betId;
 
     @Column(name="user_id")
     private int userId;
@@ -36,12 +37,12 @@ public class Bet {
         this.parent_bet = parent_bet;
     }
 
-    public int getBet_id() {
-        return bet_id;
+    public int getBetId() {
+        return betId;
     }
 
-    public void setBet_id(int bet_id) {
-        this.bet_id = bet_id;
+    public void setBetId(int betId) {
+        this.betId = betId;
     }
 
     public int getUser_id() {
