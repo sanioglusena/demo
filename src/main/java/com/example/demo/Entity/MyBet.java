@@ -12,6 +12,8 @@ public class MyBet {
     private int amount;
     private int eventCount;
     private double rateSum;
+    private int isShared;
+    private int parentId;
 
     public MyBet() {
     }
@@ -62,5 +64,21 @@ public class MyBet {
 
     public void setRateSum(double rateSum) {
         this.rateSum = rateSum;
+    }
+
+    public int getIsShared() {
+        return isShared;
+    }
+
+    public void setShared(int shared) {
+        isShared = shared;
+    }
+
+    public int getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(int parentId) {
+        this.parentId = parentId;
     }
 }

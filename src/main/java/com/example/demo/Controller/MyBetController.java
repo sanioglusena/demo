@@ -52,6 +52,8 @@ public class MyBetController {
             List<BetEvent> betEvents = betEventRepository.findByBetEventIdentityBetId(bet.getBet_id());
             myBet.setEventCount(betEvents.size());
             myBet.setAmount(bet.getAmount());
+            myBet.setParentId(bet.getParent_bet());
+            myBet.setShared(bet.getIs_shared());
 
             double rateSum = 1;
             for(BetEvent betEvent: betEvents){
