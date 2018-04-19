@@ -1,7 +1,7 @@
 package com.example.demo.Repository;
 
 import com.example.demo.Entity.BetEvent;
-import com.example.demo.Entity.Team;
+import com.example.demo.Entity.BetEventIdentity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
@@ -11,6 +11,6 @@ import java.util.List;
  */
 public interface BetEventRepository extends CrudRepository <BetEvent, Integer> {
     List<BetEvent> findAll();
-    List<BetEvent> findByBetId(int betId);
+    List<BetEvent> findByBetEventIdentityBetId(int betId);
 }
 

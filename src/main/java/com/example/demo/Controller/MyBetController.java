@@ -45,13 +45,13 @@ public class MyBetController {
             MyBet myBet = new MyBet();
             myBet.setUserId(bet.getUser_id());
             myBet.setTimeStampofBet(bet.getTimestamp());
-            List<BetEvent> betEvents = betEventRepository.findByBetId(bet.getBet_id());
+            List<BetEvent> betEvents = betEventRepository.findByBetEventIdentityBetId(bet.getBet_id());
             myBet.setEventCount(betEvents.size());
             myBet.setAmount(bet.getAmount());
 
             double rateSum = 1;
             for(BetEvent betEvent: betEvents){
-                rateSum *= eventRateRepository.findByRateId(betEvent.getBetId()).getRate();
+                rateSum *= eventRateRepository.findByRateId(betEvent.getBetEventIdentity().getRate_id()).getRate();
             }
             myBet.setRateSum(rateSum);
 
