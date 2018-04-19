@@ -18,9 +18,9 @@ public class EventRate {
 
     private int result_type;
 
-    private int rate;
+    private double rate;
 
-    public EventRate(int event_id, int result_type, int rate) {
+    public EventRate(int event_id, int result_type, double rate) {
         this.event_id = event_id;
         this.result_type = result_type;
         this.rate = rate;
@@ -53,11 +53,11 @@ public class EventRate {
         this.result_type = result_type;
     }
 
-    public int getRate() {
+    public double getRate() {
         return rate;
     }
 
-    public void setRate(int rate) {
+    public void setRate(double rate) {
         this.rate = rate;
     }
 }

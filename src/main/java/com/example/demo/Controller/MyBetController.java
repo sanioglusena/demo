@@ -49,7 +49,7 @@ public class MyBetController {
             myBet.setEventCount(betEvents.size());
             myBet.setAmount(bet.getAmount());
 
-            int rateSum = 0;
+            double rateSum = 1;
             for(BetEvent betEvent: betEvents){
                 rateSum *= eventRateRepository.findByRateId(betEvent.getBetId()).getRate();
             }

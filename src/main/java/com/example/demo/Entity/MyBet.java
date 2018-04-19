@@ -11,12 +11,12 @@ public class MyBet {
     private Date timeStampofBet;
     private int amount;
     private int eventCount;
-    private int rateSum;
+    private double rateSum;
 
     public MyBet() {
     }
 
-    public MyBet(int userId, Date timeStampofBet, int amount, int eventCount, int rateSum) {
+    public MyBet(int userId, Date timeStampofBet, int amount, int eventCount, double rateSum) {
         this.userId = userId;
         this.timeStampofBet = timeStampofBet;
         this.amount = amount;
@@ -56,11 +56,11 @@ public class MyBet {
         this.eventCount = eventCount;
     }
 
-    public int getRateSum() {
+    public double getRateSum() {
         return rateSum;
     }
 
-    public void setRateSum(int rateSum) {
+    public void setRateSum(double rateSum) {
         this.rateSum = rateSum;
     }
 }
